@@ -1,4 +1,4 @@
-# Introduction to monitoring AWS with Datadog and Terraform Cloud
+# Introduction to monitoring AWS EKS with Datadog and Terraform Cloud
 
 ## Related tutorials and repositories
 
