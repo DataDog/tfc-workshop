@@ -153,7 +153,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
                 aggregator  = "last"
                 data_source = "metrics"
                 name        = "query1"
-                query       = "sum:docker.containers.running{name:storedog}"
+                query       = "sum:kubernetes.containers.running{*}"
               }
             }
           }
@@ -185,7 +185,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
                 aggregator  = "last"
                 data_source = "metrics"
                 name        = "query1"
-                query       = "sum:docker.containers.running{name:storedog}"
+                query       = "sum:kubernetes.containers.running{*}"
               }
             }
           }
@@ -217,13 +217,13 @@ resource "datadog_dashboard" "storedog_dashboard" {
                 aggregator  = "last"
                 data_source = "metrics"
                 name        = "query1"
-                query       = "sum:docker.containers.stopped{name:storedog}"
+                query       = "sum:kubernetes.containers.restarts{*}"
               }
             }
           }
 
           text_align  = "center"
-          title       = "Stopped containers"
+          title       = "Restarted containers"
           title_align = "center"
           title_size  = "16"
         }
@@ -295,7 +295,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
               metric_query {
                 data_source = "metrics"
                 name        = "query1"
-                query       = "system.cpu.idle{host:i-0ad1945254ded3679}"
+                query       = "system.cpu.idle{*}"
               }
             }
 
@@ -303,7 +303,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
               metric_query {
                 data_source = "metrics"
                 name        = "query2"
-                query       = "system.cpu.system{host:i-0ad1945254ded3679}"
+                query       = "system.cpu.system{*}"
               }
             }
 
@@ -311,7 +311,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
               metric_query {
                 data_source = "metrics"
                 name        = "query3"
-                query       = "system.cpu.iowait{host:i-0ad1945254ded3679}"
+                query       = "system.cpu.iowait{*}"
               }
             }
 
@@ -319,7 +319,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
               metric_query {
                 data_source = "metrics"
                 name        = "query4"
-                query       = "system.cpu.user{host:i-0ad1945254ded3679}"
+                query       = "system.cpu.user{*}"
               }
             }
 
@@ -327,7 +327,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
               metric_query {
                 data_source = "metrics"
                 name        = "query5"
-                query       = "system.cpu.stolen{host:i-0ad1945254ded3679}"
+                query       = "system.cpu.stolen{*}"
               }
             }
           }
@@ -356,7 +356,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
               metric_query {
                 data_source = "metrics"
                 name        = "query1"
-                query       = "system.load.15{host:i-0ad1945254ded3679}"
+                query       = "system.load.15{*}"
               }
             }
           }
@@ -368,7 +368,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
               metric_query {
                 data_source = "metrics"
                 name        = "query1"
-                query       = "system.load.1{host:i-0ad1945254ded3679}"
+                query       = "system.load.1{*}"
               }
             }
           }
@@ -380,7 +380,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
               metric_query {
                 data_source = "metrics"
                 name        = "query1"
-                query       = "system.load.5{host:i-0ad1945254ded3679}"
+                query       = "system.load.5{*}"
               }
             }
           }
@@ -411,7 +411,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
               metric_query {
                 data_source = "metrics"
                 name        = "query1"
-                query       = "sum:docker.containers.running{name:storedog} by {docker_image}.fill(0)"
+                query       = "sum:kubernetes.containers.running{*} by {image_name}.fill(0)"
               }
             }
           }
@@ -518,7 +518,7 @@ resource "datadog_dashboard" "storedog_dashboard" {
 
         query {
           data_source  = "logs_pattern_stream"
-          query_string = "name:storedog"
+          query_string = "status:(warn OR error)"
         }
 
         response_format = "event_list"
