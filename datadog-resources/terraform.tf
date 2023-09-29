@@ -13,7 +13,7 @@ terraform {
       version = "~> 4.40.0"
     }
   }
-  required_version = "~> 1.4.5"
+  required_version = "~> 1.4"
 }
 
 data "terraform_remote_state" "k8s" {
