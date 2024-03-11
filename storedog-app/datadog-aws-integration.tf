@@ -128,6 +128,12 @@ resource "aws_iam_role_policy_attachment" "datadog_aws_integration" {
   policy_arn = "${aws_iam_policy.datadog_aws_integration.arn}"
 }
 
+# Attach policy for CSPM
+resource "aws_iam_role_policy_attachment" "aws_security_audit" {
+  role = "${aws_iam_role.datadog_aws_integration.name}"
+  policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
+}
+
 ##-----------------------------------------##
 ##            Enable the AWS integration           ##
 ## ----------------------------------------##
