@@ -6,10 +6,10 @@ terraform {
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = "~> 2.15.0"
+      version = "~> 2.35.1"
     }
   }
-  required_version = "~> 1.4"
+  required_version = "~> 1.10"
 }
 
 data "terraform_remote_state" "k8s" {

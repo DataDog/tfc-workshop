@@ -1,13 +1,26 @@
 terraform {
   required_providers {
+
+    helm = {
+      source  = "hashicorp/helm"
+      version = "~> 2.17.0"
+    }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = "~> 2.35.1"
+    }
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.39.0"
+      version = "~> 4.66.0"
+    }
+    datadog = {
+      source  = "datadog/datadog"
+      version = "~> 3.49.0"
     }
 
     random = {
       source  = "hashicorp/random"
-      version = "~> 3.4.3"
+      version = "~> 3.6.3"
     }
 
     tls = {
@@ -17,15 +30,10 @@ terraform {
 
     cloudinit = {
       source  = "hashicorp/cloudinit"
-      version = "~> 2.2.0"
-    }
-
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = "~> 2.15.0"
+      version = "~> 2.3.5"
     }
   }
 
-  required_version = "~> 1.4"
+  required_version = "~> 1.10"
 }
 
