@@ -11,11 +11,11 @@ terraform {
     }
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.66.0"
+      version = "~> 5.82.2"
     }
     datadog = {
       source  = "datadog/datadog"
-      version = "~> 3.49.0"
+      version = "~> 3.50.0"
     }
 
     random = {
