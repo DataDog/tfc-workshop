@@ -2,7 +2,7 @@ terraform {
   required_providers {
     datadog = {
       source  = "datadog/datadog"
-      version = "~> 3.50.0"
+      version = "~> 3.49.0"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"

@@ -15,7 +15,7 @@ terraform {
     }
     datadog = {
       source  = "datadog/datadog"
-      version = "~> 3.50.0"
+      version = "~> 3.49.0"
     }
 
     random = {
