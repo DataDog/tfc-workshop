@@ -2,18 +2,14 @@ terraform {
   required_providers {
     datadog = {
       source  = "datadog/datadog"
-      version = "~> 3.18.0"
+      version = "~> 3.49.0"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = "~> 2.15.0"
-    }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.40.0"
+      version = "~> 2.35.1"
     }
   }
-  required_version = "~> 1.4"
+  required_version = "~> 1.10"
 }
 
 data "terraform_remote_state" "k8s" {

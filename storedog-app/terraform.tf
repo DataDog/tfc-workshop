@@ -2,22 +2,22 @@ terraform {
   required_providers {
     helm = {
       source  = "hashicorp/helm"
-      version = "~> 2.7.1"
+      version = "~> 2.17.0"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = "~> 2.15.0"
+      version = "~> 2.35.1"
     }
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.40.0"
+      version = "~> 5.82.2"
     }
   datadog = {
       source  = "datadog/datadog"
-      version = "~> 3.18.0"
+      version = "~> 3.49.0"
     }
   }
-  required_version = "~> 1.4"
+  required_version = "~> 1.10"
 }
 
 provider "aws" {
